@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="todo-container">
+
+        <h1>My To-Do List</h1>
+        <p class="subtitle">Keep track of your tasks</p>
+
+        <button id="themeBtn">🌙 Dark Mode</button>
+
+        <!-- Lists -->
+        <div class="list-section">
+
+        <select id="listSelect"></select>
+
+          <!-- Add task -->
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task..."
+            >
+
+            <button id="addTaskBtn">Add Task</button>
+
+        </div>
+
+        <!-- Tasks -->
+        <ul id="taskList"></ul>
+
+        <p id="emptyMessage">
+            No tasks yet. Add one above!
+        </p>
+
+    </div>
+
+        <button id="renameListBtn">Rename Selected List</button>
+
+        <button id="newListBtn"> Add New List</button>
+
+        <button id="saveBtn">Save List</button>
+
+        <button id="deleteListBtn">Delete Selected List</button>
+
+        <button id="resetBtn">Reset Current Tasks</button>
+
+        </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

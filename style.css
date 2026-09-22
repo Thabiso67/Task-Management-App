@@ -1,0 +1,425 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background 0.3s ease;
+}
+
+.todo-container {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Heading */
+
+h1 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* Dark / Light Mode Button */
+
+#themeBtn {
+    display: block;
+    margin: 0 auto 20px;
+
+    padding: 8px 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #222;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#themeBtn:hover {
+    background: #eee;
+}
+
+/* List Section */
+
+.list-section {
+    margin-bottom: 20px;
+}
+
+.list-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#listSelect {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    background: white;
+    color: #222;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+/* List Buttons */
+
+#newListBtn,
+#renameListBtn,
+#deleteListBtn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 6px;
+
+    color: white;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#newListBtn {
+    background: #555;
+}
+
+#newListBtn:hover {
+    background: #333;
+}
+
+#renameListBtn {
+    background: #555;
+}
+
+#renameListBtn:hover {
+    background: #333;
+}
+
+#deleteListBtn {
+    background: #d33;
+}
+
+#deleteListBtn:hover {
+    background: #a00;
+}
+
+/* Add Task */
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    font-size: 16px;
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: #555;
+}
+
+#addTaskBtn {
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #222;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#addTaskBtn:hover {
+    background: #444;
+}
+
+/* Task List */
+
+#taskList {
+    list-style: none;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px;
+    margin-bottom: 10px;
+
+    background: #f7f7f7;
+
+    border-radius: 6px;
+
+    transition:
+        background 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-left span {
+    transition:
+        color 0.3s ease,
+        text-decoration 0.3s ease;
+}
+
+/* Completed Tasks */
+
+.task.completed {
+    opacity: 0.6;
+}
+
+.task.completed .task-left span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Delete Task Button */
+
+.delete-btn {
+    border: none;
+    background: transparent;
+
+    color: #d33;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    color: #900;
+}
+
+/* Empty Message */
+
+#emptyMessage {
+    text-align: center;
+    color: #999;
+    margin-top: 20px;
+}
+
+/* Save Button */
+
+#saveBtn {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #333;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#saveBtn:hover {
+    background: #555;
+}
+
+/* Reset Button */
+
+#resetBtn {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #d33;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#resetBtn:hover {
+    background: #a00;
+}
+
+
+/* =================================
+   DARK MODE
+================================= */
+
+body.dark-mode {
+    background: #181818;
+}
+
+body.dark-mode .todo-container {
+    background: #242424;
+    color: white;
+}
+
+body.dark-mode .subtitle {
+    color: #aaa;
+}
+
+/* Dark Mode - Theme Button */
+
+body.dark-mode #themeBtn {
+    color: white;
+    border-color: #666;
+}
+
+body.dark-mode #themeBtn:hover {
+    background: #333;
+}
+
+/* Dark Mode - Dropdown */
+
+body.dark-mode #listSelect {
+    background: #333;
+    color: white;
+    border-color: #555;
+}
+
+/* Dark Mode - Input */
+
+body.dark-mode #taskInput {
+    background: #333;
+    color: white;
+    border-color: #555;
+}
+
+body.dark-mode #taskInput::placeholder {
+    color: #aaa;
+}
+
+body.dark-mode #taskInput:focus {
+    border-color: #888;
+}
+
+/* Dark Mode - Tasks */
+
+body.dark-mode .task {
+    background: #333;
+}
+
+body.dark-mode .task.completed .task-left span {
+    color: #999;
+}
+
+body.dark-mode #emptyMessage {
+    color: #aaa;
+}
+
+/* Dark Mode - Buttons */
+
+body.dark-mode #addTaskBtn {
+    background: #eee;
+    color: #222;
+}
+
+body.dark-mode #addTaskBtn:hover {
+    background: #ddd;
+}
+
+body.dark-mode #newListBtn,
+body.dark-mode #renameListBtn {
+    background: #555;
+}
+
+body.dark-mode #newListBtn:hover,
+body.dark-mode #renameListBtn:hover {
+    background: #666;
+}
+
+body.dark-mode #saveBtn {
+    background: #555;
+}
+
+body.dark-mode #saveBtn:hover {
+    background: #666;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 500px) {
+
+    .todo-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .input-area {
+        flex-direction: column;
+    }
+
+    #addTaskBtn {
+        width: 100%;
+    }
+
+    .task {
+        gap: 10px;
+    }
+
+    .task-left {
+        min-width: 0;
+    }
+
+    .task-left span {
+        word-break: break-word;
+    }
+
+}
